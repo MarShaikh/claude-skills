@@ -17,10 +17,12 @@ transcript=$(jq -r '.transcript_path' <<<"$input")
 [ -f "$transcript" ] || exit 0
 
 # File written by the last Write call, if the latest typed prompt was /handoff.
+# A /handoff from a plugin is recorded with its prefix, such as
+# /mattpocock-skills:handoff, so accept any prefix.
 doc=$(jq -rs '
   (map(.type == "user" and .isMeta != true
        and (.message.content | type == "string")) | rindex(true)) as $i
-  | if $i != null and (.[$i].message.content | contains("<command-name>/handoff</command-name>"))
+  | if $i != null and (.[$i].message.content | test("<command-name>/([A-Za-z0-9_-]+:)?handoff</command-name>"))
     then [.[$i:][] | select(.type == "assistant") | .message.content[]
           | select(.type == "tool_use" and .name == "Write") | .input.file_path] | last // empty
     else empty end

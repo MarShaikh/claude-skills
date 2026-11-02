@@ -18,7 +18,7 @@ It was tested on macOS with zsh.
 2. Start Claude Code and type `/auto-handoff`.
 3. Open a new terminal window and start Claude Code again.
 
-The installer adds a Stop hook to `~/.claude/settings.json` and backs up the old file first. It also adds a `claude` function to `~/.zshrc` or `~/.bashrc`, and a `/handoff` command if you do not already have one. You can run it more than once without making duplicates.
+The installer adds a Stop hook to `~/.claude/settings.json` and backs up the old file first. It also adds a `claude` function to `~/.zshrc` or `~/.bashrc`, and a `/handoff` command if you do not already have one, either on its own or from a plugin. You can run it more than once without making duplicates.
 
 ## Change the token limit
 

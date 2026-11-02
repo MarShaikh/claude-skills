@@ -25,8 +25,9 @@ else
   echo "Registered the Stop hook in $settings (backup at $settings.bak-auto-handoff)"
 fi
 
-# /handoff command, unless the user already has one
-if [ -e "$claude_dir/skills/handoff" ] || [ -e "$claude_dir/commands/handoff.md" ]; then
+# /handoff command, unless the user already has one, including from a plugin
+plugin_handoff=$(find "$claude_dir/plugins/cache" -path '*/handoff/SKILL.md' 2>/dev/null | head -1)
+if [ -e "$claude_dir/skills/handoff" ] || [ -e "$claude_dir/commands/handoff.md" ] || [ -n "$plugin_handoff" ]; then
   echo "Kept your existing /handoff command. Make sure it saves the doc with the Write tool."
 else
   mkdir -p "$claude_dir/skills"
