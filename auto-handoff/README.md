@@ -14,7 +14,7 @@ It was tested on macOS with zsh.
 
 ## Install
 
-1. Copy this folder to `~/.claude/skills/auto-handoff`.
+1. Run `npx skills add MarShaikh/claude-skills --skill auto-handoff -g -a claude-code`, or copy this folder to `~/.claude/skills/auto-handoff`.
 2. Start Claude Code and type `/auto-handoff`.
 3. Open a new terminal window and start Claude Code again.
 

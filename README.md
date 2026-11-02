@@ -10,7 +10,15 @@ These are the Claude Code skills I use and share. Each folder holds one skill, a
 
 ## Install a skill
 
-Clone the repo and copy the skill's folder into `~/.claude/skills`:
+Install a skill with the [skills CLI](https://github.com/vercel-labs/skills), which needs Node.js 22.20 or later:
+
+```sh
+npx skills add MarShaikh/claude-skills --skill auto-handoff -g -a claude-code
+```
+
+Leave out `--skill` to choose from a list. The `-g` flag installs the skill for all your projects instead of only the current one, and `-a claude-code` installs it for Claude Code. To get newer versions later, run `npx skills update`.
+
+To install without Node, clone the repo and copy the skill's folder into `~/.claude/skills`:
 
 ```sh
 git clone https://github.com/MarShaikh/claude-skills
