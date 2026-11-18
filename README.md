@@ -5,6 +5,7 @@ These are the Claude Code skills I use and share. Each folder holds one skill, a
 | Skill | What it does |
 | --- | --- |
 | [auto-handoff](auto-handoff/README.md) | asks whether to hand off when a session passes a token limit, then opens a new chat on the handoff doc in the same terminal window |
+| [markdown-files](markdown-files/SKILL.md) | lays out Markdown files so they read well in Obsidian and GitHub: one line per paragraph, short table cells and runnable code blocks |
 | [understand-this-change](understand-this-change/SKILL.md) | teaches you a piece of code, such as a diff an agent just wrote, one question at a time until you understand it |
 | [webpage-to-markdown](webpage-to-markdown/SKILL.md) | turns a web page into clean Markdown with Defuddle, without the navigation, ads and other clutter |
 
@@ -40,7 +41,7 @@ These commands help after you install:
 
 ## Setup after installing
 
-understand-this-change and webpage-to-markdown work as soon as they are installed.
+markdown-files, understand-this-change and webpage-to-markdown work as soon as they are installed.
 
 auto-handoff needs one more step. Type `/auto-handoff` in Claude Code, then open a new terminal window. The skills CLI only copies files, and auto-handoff also needs a Stop hook in `~/.claude/settings.json` and a `claude` function in your shell config. Its installer adds both and is safe to run again.
 
